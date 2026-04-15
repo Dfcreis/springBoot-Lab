@@ -19,12 +19,17 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name = "nome_completo")//nome da coluna no banco de dados
     private String nome;
+
     @Column(unique = true)//Coluna unica, não pode repetir
     private String email;
 
+    @Column(name = "idade_ninja")//nome da coluna no banco de dados
     private Integer idade;
+
+    @Column(name = "foto_url")//nome da coluna no banco de dados
+    private String url;
 
     //ManytoOne:Um ninja pode ter apenas uma missao
     @ManyToOne
