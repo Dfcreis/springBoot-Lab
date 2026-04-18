@@ -25,5 +25,9 @@ public class MissoesServices {
         return missoesOptional.orElse(null);
     }
 
+    public MissoesModel criarninja(MissoesModel missoes){
+        return missoesRepository.save(missoes);
+    }
+
 
 }

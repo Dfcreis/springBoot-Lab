@@ -2,10 +2,7 @@ package dev.java10x.CadastroDeNinjas.missoes.controller;
 
 import dev.java10x.CadastroDeNinjas.missoes.model.MissoesModel;
 import dev.java10x.CadastroDeNinjas.missoes.services.MissoesServices;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,6 +33,11 @@ public class MissoesController {
         return missoesServices.ListarMissoesPorId(id);
     }
 
+    //Criar missoes
+    @PostMapping("/criar_missao")
+    public MissoesModel criarMissoes(@RequestBody MissoesModel missoes) {
+        return missoesServices.criarninja(missoes);
+    }
 
 
 

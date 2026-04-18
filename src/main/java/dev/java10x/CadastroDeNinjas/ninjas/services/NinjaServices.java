@@ -21,11 +21,15 @@ public class NinjaServices  {
     public List<NinjaModel> listarTodosNinjas() {
         return ninjaRepository.findAll();
     }
+
     //Listar ninjas por id
     public NinjaModel listarNinjaPorId(Long id) {
            Optional<NinjaModel> ninjaOptional = ninjaRepository.findById(id);
            return ninjaOptional.orElse(null);
-
     }
 
+    //Criar ninjas
+    public NinjaModel criarninja(NinjaModel ninja){
+        return ninjaRepository.save(ninja);
+    }
 }
