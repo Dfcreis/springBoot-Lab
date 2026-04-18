@@ -22,7 +22,7 @@ public class MissoesController {
     }
 
     //mostrar missoes
-    @GetMapping("/mostrar_missoes")
+    @GetMapping("/procurar")
     public List<MissoesModel> mostrarMissoesModel() {
         return missoesServices.listarTodasMissoes();
     }
@@ -36,7 +36,7 @@ public class MissoesController {
     //Criar missoes
     @PostMapping("/criar_missao")
     public MissoesModel criarMissoes(@RequestBody MissoesModel missoes) {
-        return missoesServices.criarninja(missoes);
+        return missoesServices.criarMissao(missoes);
     }
 
 
