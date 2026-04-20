@@ -2,7 +2,6 @@ package dev.java10x.CadastroDeNinjas.ninjas.services;
 
 import dev.java10x.CadastroDeNinjas.ninjas.model.NinjaModel;
 import dev.java10x.CadastroDeNinjas.ninjas.repository.NinjaRepository;
-import jdk.javadoc.doclet.Doclet;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +16,11 @@ public class NinjaServices  {
         this.ninjaRepository = ninjaRepository;
     }
 
+    //Criar ninjas
+    public NinjaModel criarninja(NinjaModel ninja){
+        return ninjaRepository.save(ninja);
+    }
+
     //Listar todos os ninjas
     public List<NinjaModel> listarTodosNinjas() {
         return ninjaRepository.findAll();
@@ -28,8 +32,9 @@ public class NinjaServices  {
            return ninjaOptional.orElse(null);
     }
 
-    //Criar ninjas
-    public NinjaModel criarninja(NinjaModel ninja){
-        return ninjaRepository.save(ninja);
+    //Deletar ninjas por id
+    public void deletarNinja(Long id){
+       ninjaRepository.deleteById(id);
     }
+
 }

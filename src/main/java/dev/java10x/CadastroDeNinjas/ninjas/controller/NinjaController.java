@@ -48,10 +48,19 @@ public class NinjaController {
     }
 
 
+    //Atualizar Ninja {UPDATE}
+    @PatchMapping("/atualizar")
+    public String atualizarNinjaId() {
+        return "Ninja atualizado com sucesso!";
+    }
+
+
+
+
     //Deletar Ninja {DELETE}
-    @DeleteMapping("/deletar")
-    public String deletarNinjaId() {
-        return "Ninja deletado com sucesso!";
+    @DeleteMapping("/deletar/{id}")
+    public void deletarNinjaId(@PathVariable Long id) {
+        ninjaServices.deletarNinja(id);
     }
 
 
