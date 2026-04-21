@@ -29,8 +29,11 @@ public class NinjaModel {
     @Column(name = "idade_ninja")//nome da coluna no banco de dados
     private Integer idade;
 
-    @Column(name = "foto_url")//nome da coluna no banco de dados
+    @Column(name = "foto_url")
     private String url;
+
+    @Column(name = "rank_ninja")
+    private String rank;
 
     //ManytoOne:Um ninja pode ter apenas uma missao
     @ManyToOne
