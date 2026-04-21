@@ -31,10 +31,20 @@ public class NinjaServices  {
            Optional<NinjaModel> ninjaOptional = ninjaRepository.findById(id);
            return ninjaOptional.orElse(null);
     }
-
     //Deletar ninjas por id
     public void deletarNinja(Long id){
        ninjaRepository.deleteById(id);
     }
+
+
+    //Altualizar ninja por id
+    public NinjaModel atualizarNinja(Long id,NinjaModel ninjaAtualiazado) {
+        if (ninjaRepository.existsById(id)) {
+            ninjaAtualiazado.setId(id);
+            return ninjaRepository.save(ninjaAtualiazado);
+        }
+        return null;
+    }
+
 
 }

@@ -49,12 +49,10 @@ public class NinjaController {
 
 
     //Atualizar Ninja {UPDATE}
-    @PatchMapping("/atualizar")
-    public String atualizarNinjaId() {
-        return "Ninja atualizado com sucesso!";
-    }
-
-
+   @PutMapping("/atualizar/{id}")
+   public NinjaModel atualizar(@PathVariable Long id, @RequestBody NinjaModel ninjaAtualizado){
+        return ninjaServices.atualizarNinja(id, ninjaAtualizado);
+   }
 
 
     //Deletar Ninja {DELETE}

@@ -19,6 +19,7 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "nome_completo")//nome da coluna no banco de dados
     private String nome;
 
