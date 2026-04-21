@@ -1,5 +1,6 @@
 package dev.java10x.CadastroDeNinjas.ninjas.controller;
 
+import dev.java10x.CadastroDeNinjas.ninjas.dto.NinjaDto;
 import dev.java10x.CadastroDeNinjas.ninjas.model.NinjaModel;
 import dev.java10x.CadastroDeNinjas.ninjas.services.NinjaServices;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +25,8 @@ public class NinjaController {
     //CRUD
     //Adicionar Ninja {CREATE}
     @PostMapping("/criar")
-    public NinjaModel adicionarNinja(@RequestBody NinjaModel ninja) {
-        return ninjaServices.criarninja(ninja);
+    public NinjaDto adicionarNinja(@RequestBody NinjaDto ninjaDto) {
+        return ninjaServices.criarNinja(ninjaDto);
     }
 
     //Procurar Ninja por ID {CREATE}
