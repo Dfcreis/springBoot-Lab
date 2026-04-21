@@ -39,6 +39,18 @@ public class MissoesController {
         return missoesServices.criarMissao(missoes);
     }
 
+    //Deletar missoes por id
+    @DeleteMapping("/deletar/{id}")
+    public void deletarMissao(@PathVariable Long id) {
+        missoesServices.deletarMissao(id);
+    }
+
+    //Atualizar missoes por id
+    @PutMapping("/atualizar/{id}")
+    public MissoesModel atualizarMissoes(@PathVariable Long id, @RequestBody MissoesModel missoesAtualizada) {
+        return missoesServices.atualizarMissoes(id, missoesAtualizada);
+    }
+
 
 
 }
